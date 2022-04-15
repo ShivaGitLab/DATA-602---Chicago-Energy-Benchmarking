@@ -23,7 +23,7 @@ Feature description :
 - Primary Property Type: Property Catagory                       
 - Gross Floor Area - Buildings (sq ft): Total Are in SqFt    
 - Year Built : Year in which construction was completed                                  
-- # of Buildings: Number of buildings in the property
+- #of Buildings: Number of buildings in the property
 - Water Use (kGal): Water usage in kGal
 - ENERGY STAR Score: 0-100        
 - Electricity Use (kBtu): Electricity Utilization                   
@@ -53,7 +53,60 @@ info() method hepls in knowing the quick description about the dataframe.
 
 # Data Cleaning and Feature Engineering
 
-Observations:
+EDA Observations:
+
+- Renaming the below columns for readability
+
+1) 'Data Year': 'Year'
+     
+2) '# of Buildings': 'NumberOfBuildings'
+    
+3) 'Chicago Energy Rating': 'CERating'
+
+- Dropping below columns as they contain less values or after careful observation and research I thought, they have no value in yeilding the target varaible through model.
+
+
+'Property Name', 'Address', 'ZIP Code', 'Water Use (kGal)'
+
+'District Steam Use (kBtu)', 'District Chilled Water Use (kBtu)'
+
+'All Other Fuel Use (kBtu)', 'Site EUI (kBtu/sq ft)'
+
+'Source EUI (kBtu/sq ft)', 'Weather Normalized Site EUI (kBtu/sq ft)'
+
+'Weather Normalized Source EUI (kBtu/sq ft)', 'Location', 'Row_ID', 'Latitude', 'Longitude' 
+
+- Changing the column 'Exempt From Chicago Energy Rating' type as boolean but not executing this statement as boolean values are generating errors while generating Correlation Matrix
+
+- A significant of properties reported their Energy usages for Years 2018, 19 and 20. Hence, Considering the data for the years 2018, 19 and 20.
+
+- Some of the properties which have status status as True not reported Energy usage as they either claim 'Not eligible' or 'Not Submitted'. We may remove them in future while training the model.
+
+- According the Energy Rating Distibution below is the energy scores breakdown for each year ,
+
+1) In 2018, Highest number of Properties are reported between 2-4
+
+2) In 2019, The trend has been dropped as many number of properties have either not reported or not efficiently utilized energy.
+
+3) In 2020, The trend came back to normal with increasing participation from the stakeholders.
+
+Note: 
+    
+    0 - Not Efficient Energy Consumer/Not Reported
+    4 - Effiicient Energy Consumer
+ 
+ - According to the correlation the following are being considered,
+
+1) As 'Total GHG Emissions (Metric Tons CO2e)' and 'Electricity Usage (kBtu)' are correlated about 94%, We may consider removing 'Total GHG Emissions (Metric Tons CO2e)' as they both carry almost same information. 
+
+2) As 'CERating' and 'ENERGY START Score' are correlated about 91%, We may consider removing 'ENERGY START Score' as they both carry almost same information. Moreover, According to changed Chicago Energy Benchmarking Rules properties started reporting in the format 0-4 instead of 0-100.
+
+3) As 'Gross Floor Area - Buildings (sq ft)' and 'Electricity Use (kBtu)' are correlated about 75%, We might consider removing 'Electricity Use (kBtu)' as they both carry almost same information.
+
+4) As 'Gross Floor Area - Buildings (sq ft)' and 'Total GHG Emissions (Metric Tons CO2e)' are correlated about 73%, We might consider removing 'Total GHG Emissions (Metric Tons CO2e)' as they both carry almost same information.
+
+
+
 
 
 
