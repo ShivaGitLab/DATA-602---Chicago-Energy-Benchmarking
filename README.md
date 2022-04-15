@@ -80,7 +80,7 @@ EDA Observations:
 
 - A significant of properties reported their Energy usages for Years 2018, 19 and 20. Hence, Considering the data for the years 2018, 19 and 20.
 
-- Some of the properties which have status status as True not reported Energy usage as they either claim 'Not eligible' or 'Not Submitted'. We may remove them in future while training the model.
+- Some of the properties have Exempt From Chicago Energy Rating status as True not reported Energy usage as they either claim 'Not eligible' or 'Not Submitted'. We may remove them in future while training the model.
 
 - According the Energy Rating Distibution below is the energy scores breakdown for each year ,
 
