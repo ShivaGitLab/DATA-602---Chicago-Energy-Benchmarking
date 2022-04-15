@@ -105,6 +105,9 @@ Note:
 
 4) As 'Gross Floor Area - Buildings (sq ft)' and 'Total GHG Emissions (Metric Tons CO2e)' are correlated about 73%, We might consider removing 'Total GHG Emissions (Metric Tons CO2e)' as they both carry almost same information.
 
+- From above graphs, It is eveident that the partcipation of stakeholders is explonentially growing by each year.
+
+
 
 
 
