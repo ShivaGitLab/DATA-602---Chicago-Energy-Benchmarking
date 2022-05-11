@@ -99,19 +99,38 @@ Note:
 
 1) As 'Total GHG Emissions (Metric Tons CO2e)' and 'Electricity Usage (kBtu)' are correlated about 94%, We may consider removing 'Total GHG Emissions (Metric Tons CO2e)' as they both carry almost same information. 
 
-2) As 'CERating' and 'ENERGY START Score' are correlated about 91%, We may consider removing 'ENERGY START Score' as they both carry almost same information. Moreover, According to changed Chicago Energy Benchmarking Rules properties started reporting in the format 0-4 instead of 0-100.
+2) As 'CERating' and 'ENERGY START Score' are correlated about 91%, We may consider removing 'CERating' as they both carry almost same information. Moreover, According to changed Chicago Energy Benchmarking Rules properties started reporting in the format 0-4 instead of 0-100.
 
 3) As 'Gross Floor Area - Buildings (sq ft)' and 'Electricity Use (kBtu)' are correlated about 75%, We might consider removing 'Electricity Use (kBtu)' as they both carry almost same information.
 
 4) As 'Gross Floor Area - Buildings (sq ft)' and 'Total GHG Emissions (Metric Tons CO2e)' are correlated about 73%, We might consider removing 'Total GHG Emissions (Metric Tons CO2e)' as they both carry almost same information.
 
-- From above graphs, It is eveident that the partcipation of stakeholders is explonentially growing by each year.
 
 
+Feature Engineering:
 
 
+1) Imputed Null values in Numerical Features with median values.
+2) Imputed Null values in Categorical Features with Most Frequently listed Item
+3) As the classes are imbalanced, class_weight parameter configured as 'balanced' to help the model in assigning relavant weights.
+
+Modeling:
+Logistic Regression - Grid Search:
+
+1) Proceeded for logistic regression with C Values:0.01, 0.1, 1, 10, 100
+1) Proceeding to Secondary Grid Search around the C Value(100) received from Primary Grid Search to compare model performance.
+2) The GridSearch returned the same C Values even if tried Changing Hyper Parameter Value(C) range with in the vicinity of 100. Hence sticking with the C = 100 for linear regression.
+3) The Precision, ReCall and F1-Score indicates no significant improvement over previous run as the C Value remain the same.
+4) The ROC Curves and AUC Suggests, Model Performance is better for both Class 'A' & 'C' as the model has 90% chance that it will be able to distinguish between positive class and negative class compared to the Class 'B'(67%).
+5) With Average AUC Score of 82% Model performed considerably well.
 
 
+Decision Tree - GridSearch
 
-
-
+1) Proceeded for model with hypermeteres: 'model__max_depth': [1, 3, 6, 9, 13, 15], 'model__min_samples_split' : [0.1, 0.2, 0.5, 0.7]
+2) Proceeding to Secondary Grid Search to see if it can propose better hyperparameters.
+3) The Recall and F1-Scores for Class 'B' has been considerably improved while remaining combinations show significant improvements.
+4) Recall Macro Avg Accuracy of the model also improved from 59% to 66%.
+5) Hence fixating on below hyperparameters this model for future reference. max_depth=16, min_samples_split=0.01
+6) Above ROC Curves and AUC Suggests, Model Performance is better for both Class 'A' & 'C' as model has 90% chance that it will be able to distinguish between positive class and negative class compared to the Class 'B' (76%).
+7) With Averga AUC Score of 85% Decision Tree Model relatively out-performed Logistic Regression.
