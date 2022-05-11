@@ -114,8 +114,8 @@ Feature Engineering:
 2) Imputed Null values in Categorical Features with Most Frequently listed Item
 3) As the classes are imbalanced, class_weight parameter configured as 'balanced' to help the model in assigning relavant weights.
 
-Modeling:
-Logistic Regression - Grid Search:
+**Modeling:
+Logistic Regression - Grid Search:**
 
 1) Proceeded for logistic regression with C Values:0.01, 0.1, 1, 10, 100
 1) Proceeding to Secondary Grid Search around the C Value(100) received from Primary Grid Search to compare model performance.
@@ -125,7 +125,7 @@ Logistic Regression - Grid Search:
 5) With Average AUC Score of 82% Model performed considerably well.
 
 
-Decision Tree - GridSearch
+**Decision Tree - GridSearch**
 
 1) Proceeded for model with hypermeteres: 'model__max_depth': [1, 3, 6, 9, 13, 15], 'model__min_samples_split' : [0.1, 0.2, 0.5, 0.7]
 2) Proceeding to Secondary Grid Search to see if it can propose better hyperparameters.
@@ -134,3 +134,21 @@ Decision Tree - GridSearch
 5) Hence fixating on below hyperparameters this model for future reference. max_depth=16, min_samples_split=0.01
 6) Above ROC Curves and AUC Suggests, Model Performance is better for both Class 'A' & 'C' as model has 90% chance that it will be able to distinguish between positive class and negative class compared to the Class 'B' (76%).
 7) With Averga AUC Score of 85% Decision Tree Model relatively out-performed Logistic Regression.
+
+**Gradient Boosting Classifier - GridSearch**
+
+1) Proceeded for model with hypermeteres: 'gb__max_depth': [1, 2, 3], 'gb__n_estimators': [50, 100, 200]
+2) The Precsion, Recall and F1-Scores for all the classes seen significant improvement.
+3) Recall Macro Avg Accuracy of the model also improved from 68% to 70%.
+4) Hence fixating on below hyperparameter and this model for future reference. 
+   n_estimators=400
+5) Above ROC Curves and AUC Suggests, Model Performance is better for both Class 'A' & 'C' as model has 94% chance that it will be able to distinguish between positive    class and negative class compared to the Class 'B' (81%).
+6) With Averga AUC Score of 90% Gradient Booting Classifier Model relatively out-performed Logistic Regression & Decision Tree.
+
+**Conclusion:**
+
+We can choose Gradient Boosting Classifier model to generalize the population for following reasons. 
+
+1) The Recall Macro Avg Score has been 70% compared to 63% and 66% of logistic regression and Decision Tree Respectively.
+2) Precision, Recall & F1-Scores are better than both logistic regression and Decision Tree.
+3) Model Accuracy has been 75% which is relatively better in Comparision.
