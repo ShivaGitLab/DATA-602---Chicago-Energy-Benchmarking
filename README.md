@@ -107,13 +107,32 @@ Note:
 
 
 
-Feature Engineering:
+**Feature Engineering:**
 
 
 1) Imputed Null values in Numerical Features with median values.
 2) Imputed Null values in Categorical Features with Most Frequently listed Item
 3) As the classes are imbalanced, class_weight parameter configured as 'balanced' to help the model in assigning relavant weights.
+**
+Final Feature Set:**
 
+**Target:**
+     ERating
+**
+Features:**
+     CommunityArea
+     PrimaryPropertyType
+     GrossFloorArea
+     NumberOfBuildings
+     ElectricityUse
+     NaturalGasUse
+     SiteEUI
+     WeatherNormSiteEUI
+     GHGIntensity
+
+
+Training examples: 10,293
+Test examples: 2,574
 **Modeling:
 Logistic Regression - Grid Search:**
 
