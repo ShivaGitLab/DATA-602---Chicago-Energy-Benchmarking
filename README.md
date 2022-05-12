@@ -172,3 +172,12 @@ We can choose Gradient Boosting Classifier model to generalize the population fo
 1) The Recall Macro Avg Score has been 70% compared to 63% and 66% of logistic regression and Decision Tree Respectively.
 2) Precision, Recall & F1-Scores are better than both logistic regression and Decision Tree.
 3) Model Accuracy has been 75% which is relatively better in Comparision.
+
+**References:**
+
+https://github.com/vinyluis/Articles/tree/main/ROC%20Curve%20and%20ROC%20AUC
+
+https://www.chicago.gov/content/dam/city/progs/env/EnergyBenchmark/2020_Chicago_Energy_Benchmarking_Report.pdf
+
+
+
