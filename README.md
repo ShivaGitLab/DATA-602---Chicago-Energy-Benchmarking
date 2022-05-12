@@ -121,8 +121,8 @@ Note:
      ERating
      
 **Features:**
-     CommunityArea  
-     PrimaryPropertyType
+     CommunityArea\  
+     PrimaryPropertyType\
      GrossFloorArea
      NumberOfBuildings
      ElectricityUse
