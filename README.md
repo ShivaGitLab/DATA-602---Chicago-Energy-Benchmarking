@@ -119,9 +119,9 @@ Note:
 
 **Target:**
      ERating
+     
 **Features:**
-     CommunityArea
-  
+     CommunityArea  
      PrimaryPropertyType
      GrossFloorArea
      NumberOfBuildings
